@@ -31,15 +31,19 @@ export const TEXTS = {
     black: "BLACK",
     friday: "FRIDAY",
     dates: "Del 25/11 al 3/12",
-    store: "En nuestra tienda de Mercado Libre",
+    tagline: "Todo Victron para tu sistema solar",
   },
-  fechas: {
-    title: "Nueve días de Black Friday",
-    from: { day: "25", month: "NOV" },
-    to: { day: "3", month: "DIC" },
-    days: 9,
-    daysLabel: "días para aprovechar",
-    store: "En nuestra tienda de Mercado Libre",
+  productos: {
+    kicker: "Victron Energy",
+    badge: "Black Friday",
+    coupon: "5% OFF con cupón",
+    // Nombres, precios y leyendas tal cual figuran en la tienda de Mercado Libre.
+    items: [
+      { img: "productos/orion-smart.png", name: "Cargador Orion Smart 12/12-18A Aislado Victron", price: "$ 446.490", oldPrice: "", note: "" },
+      { img: "productos/phoenix.png", name: "Inversor Victron Phoenix VE.Direct 24/1200 230V", price: "$ 937.302", oldPrice: "$ 986.634", note: "" },
+      { img: "productos/orion-tr.png", name: "Convertidor DC-DC Victron Orion-Tr 48/24-12A Aislado", price: "$ 337.590", oldPrice: "", note: "" },
+      { img: "productos/mppt.png", name: "Controlador de Carga Solar Victron BlueSolar MPPT 150/35", price: "$ 446.490", oldPrice: "", note: "" },
+    ],
   },
   outro: {
     title: "¡Aprovechá el Black Friday!",

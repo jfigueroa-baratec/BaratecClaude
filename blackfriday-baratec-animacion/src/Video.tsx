@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { loadFont } from "@remotion/google-fonts/TitilliumWeb";
 import { AUDIO, COLORS, SCENES, TIMELINE } from "./config";
 import { Intro } from "./scenes/Intro";
-import { Fechas } from "./scenes/Fechas";
+import { Productos } from "./scenes/Productos";
 import { Outro } from "./scenes/Outro";
 import { Wipe } from "./components/Wipe";
 
@@ -20,14 +20,17 @@ export const Video: React.FC = () => (
     <Sequence from={SCENES.intro.from} durationInFrames={SCENES.intro.to + 1 - SCENES.intro.from}>
       <Intro />
     </Sequence>
-    <Sequence from={SCENES.fechas.from} durationInFrames={SCENES.fechas.to + 1 - SCENES.fechas.from}>
-      <Fechas />
+    <Sequence from={SCENES.productosA.from} durationInFrames={SCENES.productosA.to + 1 - SCENES.productosA.from}>
+      <Productos first={0} />
+    </Sequence>
+    <Sequence from={SCENES.productosB.from} durationInFrames={SCENES.productosB.to + 1 - SCENES.productosB.from}>
+      <Productos first={2} />
     </Sequence>
     <Sequence from={SCENES.cierre.from} durationInFrames={TIMELINE.durationInFrames - SCENES.cierre.from}>
       <Outro />
     </Sequence>
 
-    {[SCENES.fechas.from, SCENES.cierre.from].map((b) => (
+    {[SCENES.productosA.from, SCENES.productosB.from, SCENES.cierre.from].map((b) => (
       <Wipe key={b} at={b} half={TIMELINE.wipeHalf} />
     ))}
 

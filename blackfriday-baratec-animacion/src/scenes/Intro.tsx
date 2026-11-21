@@ -8,12 +8,12 @@ export const Intro: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const sp = (d: number, damping = 14) => spring({ frame: frame - d, fps, config: { damping, stiffness: 130 } });
-  const logos = sp(4);
-  const black = sp(10, 11);
-  const friday = sp(22, 11);
-  const dates = sp(34, 12);
-  const store = sp(40);
-  const bar = interpolate(frame, [26, 46], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const logos = sp(2);
+  const black = sp(6, 11);
+  const friday = sp(14, 11);
+  const dates = sp(22, 12);
+  const store = sp(28);
+  const bar = interpolate(frame, [18, 36], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   return (
     <AbsoluteFill>
@@ -35,7 +35,7 @@ export const Intro: React.FC = () => {
         </div>
 
         <div style={{ fontSize: 48, fontWeight: FONT_WEIGHTS.light, color: COLORS.white, opacity: store, transform: `translateY(${(1 - store) * 30}px)`, textAlign: "center" }}>
-          {TEXTS.intro.store}
+          {TEXTS.intro.tagline}
         </div>
       </div>
     </AbsoluteFill>

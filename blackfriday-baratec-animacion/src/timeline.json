@@ -4,14 +4,18 @@
   "scenes": {
     "intro": {
       "from": 0,
-      "to": 60
+      "to": 54
     },
-    "fechas": {
-      "from": 60,
-      "to": 210
+    "productosA": {
+      "from": 54,
+      "to": 126
+    },
+    "productosB": {
+      "from": 126,
+      "to": 198
     },
     "cierre": {
-      "from": 210,
+      "from": 198,
       "to": 300
     }
   },
@@ -19,52 +23,57 @@
   "sfx": [
     {
       "type": "pop",
-      "frame": 10,
+      "frame": 8,
       "volume": 0.8
     },
     {
       "type": "pop",
-      "frame": 22,
+      "frame": 16,
       "volume": 0.8
     },
     {
       "type": "pop",
-      "frame": 34,
+      "frame": 24,
       "volume": 0.9
     },
     {
       "type": "whoosh",
-      "frame": 51,
+      "frame": 45,
       "volume": 0.9
     },
     {
       "type": "pop",
-      "frame": 76,
+      "frame": 64,
       "volume": 0.9
     },
     {
       "type": "pop",
-      "frame": 104,
+      "frame": 84,
       "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 132,
-      "volume": 0.7
-    },
-    {
-      "type": "pop",
-      "frame": 160,
-      "volume": 1.0
     },
     {
       "type": "whoosh",
-      "frame": 201,
+      "frame": 117,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 136,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 156,
+      "volume": 0.9
+    },
+    {
+      "type": "whoosh",
+      "frame": 189,
       "volume": 0.9
     },
     {
       "type": "accent",
-      "frame": 226,
+      "frame": 214,
       "volume": 1.0
     }
   ]
