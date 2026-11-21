@@ -6,7 +6,7 @@ import { Background } from "../components/Background";
 const Card: React.FC<{ day: string; month: string; p: number }> = ({ day, month, p }) => (
   <div style={{ width: 350, background: COLORS.white, borderRadius: 10, overflow: "hidden", textAlign: "center", opacity: p, transform: `translateY(${(1 - p) * 120}px) scale(${0.85 + 0.15 * p})` }}>
     <div style={{ background: COLORS.primary, color: COLORS.white, fontSize: 56, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 8, padding: "14px 0" }}>{month}</div>
-    <div style={{ color: COLORS.darkAlt, fontSize: 230, lineHeight: 1.0, fontWeight: FONT_WEIGHTS.black, padding: "10px 0 24px" }}>{day}</div>
+    <div style={{ color: COLORS.dark, fontSize: 230, lineHeight: 1.0, fontWeight: FONT_WEIGHTS.black, padding: "10px 0 24px" }}>{day}</div>
   </div>
 );
 
@@ -31,21 +31,21 @@ export const Fechas: React.FC = () => {
         <div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20 }}>
             <Card day={T.from.day} month={T.from.month} p={c1} />
-            <div style={{ fontSize: 70, color: COLORS.white, fontWeight: FONT_WEIGHTS.bold, opacity: arrow, transform: `scaleX(${arrow})` }}>→</div>
+            <div style={{ fontSize: 70, color: COLORS.yellow, fontWeight: FONT_WEIGHTS.bold, opacity: arrow, transform: `scaleX(${arrow})` }}>→</div>
             <Card day={T.to.day} month={T.to.month} p={c2} />
           </div>
           {/* un punto por día, se van encendiendo */}
           <div style={{ display: "flex", justifyContent: "center", gap: 30, marginTop: 56 }}>
             {Array.from({ length: T.days }).map((_, i) => {
               const on = spring({ frame: frame - (48 + i * 3), fps, config: { damping: 9, stiffness: 200 } });
-              return <div key={i} style={{ width: 60, height: 60, borderRadius: 30, background: on > 0.05 ? COLORS.primary : "rgba(255,255,255,0.18)", transform: `scale(${0.7 + 0.3 * Math.min(1.25, on)})` }} />;
+              return <div key={i} style={{ width: 60, height: 60, borderRadius: 30, background: on > 0.05 ? COLORS.yellow : "rgba(255,255,255,0.18)", transform: `scale(${0.7 + 0.3 * Math.min(1.25, on)})` }} />;
             })}
           </div>
         </div>
 
         <div>
-          <div style={{ fontSize: 150, lineHeight: 1, fontWeight: FONT_WEIGHTS.black, color: COLORS.white, opacity: nine, transform: `scale(${0.6 + 0.4 * nine})` }}>
-            {T.days} <span style={{ fontSize: 64, fontWeight: FONT_WEIGHTS.bold }}>{T.daysLabel}</span>
+          <div style={{ fontSize: 150, lineHeight: 1, fontWeight: FONT_WEIGHTS.black, color: COLORS.yellow, opacity: nine, transform: `scale(${0.6 + 0.4 * nine})` }}>
+            {T.days} <span style={{ fontSize: 64, fontWeight: FONT_WEIGHTS.bold, color: COLORS.white }}>{T.daysLabel}</span>
           </div>
           <div style={{ marginTop: 26, fontSize: 48, fontWeight: FONT_WEIGHTS.light, color: COLORS.white, opacity: store, transform: `translateY(${(1 - store) * 30}px)` }}>{T.store}</div>
         </div>

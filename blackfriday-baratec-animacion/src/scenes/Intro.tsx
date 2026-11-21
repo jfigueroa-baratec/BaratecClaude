@@ -25,10 +25,10 @@ export const Intro: React.FC = () => {
           <div style={{ fontSize: 250, lineHeight: 0.95, fontWeight: FONT_WEIGHTS.black, color: COLORS.white, letterSpacing: -4, opacity: black, transform: `translateY(${(1 - black) * 140}px) scale(${0.85 + 0.15 * black})` }}>
             {TEXTS.intro.black}
           </div>
-          <div style={{ display: "inline-block", marginTop: 14, padding: "0 36px", background: COLORS.primary, fontSize: 250, lineHeight: 1.0, fontWeight: FONT_WEIGHTS.black, color: COLORS.white, letterSpacing: -4, opacity: friday, transform: `translateX(${(1 - friday) * 300}px)` }}>
+          <div style={{ display: "inline-block", marginTop: 14, padding: "0 36px", background: COLORS.yellow, fontSize: 250, lineHeight: 1.0, fontWeight: FONT_WEIGHTS.black, color: COLORS.dark, letterSpacing: -4, opacity: friday, transform: `translateX(${(1 - friday) * 300}px)` }}>
             {TEXTS.intro.friday}
           </div>
-          <div style={{ width: 640, height: 8, background: COLORS.white, margin: "44px auto 40px", transform: `scaleX(${bar})` }} />
+          <div style={{ width: 640, height: 8, background: COLORS.yellow, margin: "44px auto 40px", transform: `scaleX(${bar})` }} />
           <div style={{ fontSize: 84, fontWeight: FONT_WEIGHTS.bold, color: COLORS.white, opacity: dates, transform: `scale(${0.8 + 0.2 * dates})` }}>
             {TEXTS.intro.dates}
           </div>

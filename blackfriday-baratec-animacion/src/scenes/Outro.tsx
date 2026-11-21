@@ -26,13 +26,13 @@ export const Outro: React.FC = () => {
           <div style={{ fontSize: 92, lineHeight: 1.08, textWrap: "balance", fontWeight: FONT_WEIGHTS.bold, color: COLORS.white, opacity: title, transform: `translateY(${(1 - title) * 50}px)` }}>
             {TEXTS.outro.title}
           </div>
-          <div style={{ display: "inline-block", marginTop: 44, padding: "6px 40px", background: COLORS.primary, fontSize: 124, lineHeight: 1.1, whiteSpace: "nowrap", fontWeight: FONT_WEIGHTS.black, color: COLORS.white, opacity: dates, transform: `scale(${0.7 + 0.3 * dates})` }}>
+          <div style={{ display: "inline-block", marginTop: 44, padding: "6px 40px", background: COLORS.yellow, fontSize: 124, lineHeight: 1.1, whiteSpace: "nowrap", fontWeight: FONT_WEIGHTS.black, color: COLORS.dark, opacity: dates, transform: `scale(${0.7 + 0.3 * dates})` }}>
             {TEXTS.outro.dates}
           </div>
         </div>
 
         <div>
-          <div style={{ background: COLORS.white, color: COLORS.primary, fontSize: 64, fontWeight: FONT_WEIGHTS.bold, padding: "24px 56px", borderRadius: 8, opacity: cta, transform: `scale(${(0.7 + 0.3 * cta) * pulse})` }}>
+          <div style={{ background: COLORS.yellow, color: COLORS.dark, fontSize: 64, fontWeight: FONT_WEIGHTS.bold, padding: "24px 56px", borderRadius: 8, opacity: cta, transform: `scale(${(0.7 + 0.3 * cta) * pulse})` }}>
             {TEXTS.outro.cta} →
           </div>
           <div style={{ marginTop: 28, fontSize: 48, fontWeight: FONT_WEIGHTS.light, color: COLORS.white, opacity: url }}>{TEXTS.outro.sub}</div>

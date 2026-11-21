@@ -12,15 +12,16 @@ export const HEIGHT = 1920;
 /** Zonas seguras para Reels/TikTok/ML: nada de texto ni logos fuera de este rectángulo */
 export const SAFE = { top: 250, bottom: 420, right: 120, left: 90 };
 
-/** Paleta de solar.baratec.com (el pie usa #221F20 con logo inverso) */
+/** Colores de marca indicados por Baratec + amarillo de Mercado Libre como acento de campaña */
 export const COLORS = {
-  primary: "#0065B1",
+  primary: "#0A5AA2",
   primaryHover: "#286090",
   white: "#FFFFFF",
-  dark: "#221F20",
+  dark: "#201C1D",
   darkAlt: "#293240",
-  grey: "#7D7E82",
+  grey: "#888A8D",
   light: "#F4F4F5",
+  yellow: "#FFE340", // amarillo de Mercado Libre (acento de la campaña)
 };
 
 export const FONT_WEIGHTS = { light: 300, regular: 400, title: 600, bold: 700, black: 900 };
