@@ -17,7 +17,7 @@ export const COLORS = {
   primary: "#0A5AA2",
   primaryHover: "#286090",
   white: "#FFFFFF",
-  dark: "#201C1D",
+  dark: "#000000",
   darkAlt: "#293240",
   grey: "#888A8D",
   light: "#F4F4F5",
