@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { loadFont } from "@remotion/google-fonts/TitilliumWeb";
 import { AUDIO, COLORS, SCENES, TIMELINE } from "./config";
 import { Intro } from "./scenes/Intro";
+import { Fechas } from "./scenes/Fechas";
 import { Outro } from "./scenes/Outro";
 import { Wipe } from "./components/Wipe";
 
@@ -19,12 +20,14 @@ export const Video: React.FC = () => (
     <Sequence from={SCENES.intro.from} durationInFrames={SCENES.intro.to + 1 - SCENES.intro.from}>
       <Intro />
     </Sequence>
-    {/* TODO: placas de productos (SCENES.productos) cuando se definan productos y descuentos */}
+    <Sequence from={SCENES.fechas.from} durationInFrames={SCENES.fechas.to + 1 - SCENES.fechas.from}>
+      <Fechas />
+    </Sequence>
     <Sequence from={SCENES.cierre.from} durationInFrames={TIMELINE.durationInFrames - SCENES.cierre.from}>
       <Outro />
     </Sequence>
 
-    {[SCENES.productos.from, SCENES.cierre.from].map((b) => (
+    {[SCENES.fechas.from, SCENES.cierre.from].map((b) => (
       <Wipe key={b} at={b} half={TIMELINE.wipeHalf} />
     ))}
 

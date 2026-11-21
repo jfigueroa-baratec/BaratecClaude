@@ -32,6 +32,14 @@ export const TEXTS = {
     dates: "Del 25/11 al 3/12",
     store: "En nuestra tienda de Mercado Libre",
   },
+  fechas: {
+    title: "Nueve días de Black Friday",
+    from: { day: "25", month: "NOV" },
+    to: { day: "3", month: "DIC" },
+    days: 9,
+    daysLabel: "días para aprovechar",
+    store: "En nuestra tienda de Mercado Libre",
+  },
   outro: {
     title: "¡Aprovechá el Black Friday!",
     dates: "25/11 → 3/12",
