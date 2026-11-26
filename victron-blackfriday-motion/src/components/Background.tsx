@@ -1,20 +1,35 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
-import { COLORS, TIMELINE } from "../config";
+import { COLORS, TEXTS } from "../config";
 
-/** Fondo blanco con puntos tenues y, abajo, una barra de progreso: un "sol" amarillo recorre los 10 s. */
-export const Background: React.FC<{ dots?: boolean }> = ({ dots = true }) => (
+/** Fondo blanco con puntos grises muy tenues. */
+export const Background: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: COLORS.background }}>
-    {dots && <AbsoluteFill style={{ backgroundImage: `radial-gradient(${COLORS.border} 2px, transparent 2px)`, backgroundSize: "54px 54px", opacity: 0.8 }} />}
+    <AbsoluteFill style={{ backgroundImage: `radial-gradient(${COLORS.border} 2px, transparent 2px)`, backgroundSize: "54px 54px", opacity: 0.8 }} />
   </AbsoluteFill>
 );
 
-export const ProgressBar: React.FC = () => {
+const UNIT = 1400; // ancho de cada repetición del texto
+
+/** Banda de texto que se desplaza despacio (decorativa, fuera de la zona segura). textLength fija el ancho para que el empalme sea exacto. */
+const Band: React.FC<{ top: number; bg: string; color: string; dir: 1 | -1 }> = ({ top, bg, color, dir }) => {
   const frame = useCurrentFrame();
-  const p = frame / (TIMELINE.durationInFrames - 1);
+  const off = ((frame * 3 * dir) % UNIT + UNIT) % UNIT;
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 22, background: COLORS.primary }}>
-      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${p * 100}%`, background: COLORS.yellow }} />
+    <div style={{ position: "absolute", left: 0, right: 0, top, height: 96, background: bg, overflow: "hidden" }}>
+      <svg width={1080} height={96} style={{ display: "block" }}>
+        {[-1, 0, 1, 2].map((i) => (
+          <text key={i} x={i * UNIT + off + 40} y={68} fontSize={56} fontWeight={700} fill={color} fontFamily="inherit" textLength={UNIT - 80} lengthAdjust="spacing" style={{ whiteSpace: "pre" }}>{TEXTS.marquee}</text>
+        ))}
+      </svg>
     </div>
   );
 };
+
+/** Bandas superior (negra con texto amarillo) e inferior (amarilla con texto negro) que acompañan todo el video. */
+export const Bands: React.FC = () => (
+  <>
+    <Band top={96} bg={COLORS.ink} color={COLORS.yellow} dir={-1} />
+    <Band top={1700} bg={COLORS.yellow} color={COLORS.ink} dir={1} />
+  </>
+);

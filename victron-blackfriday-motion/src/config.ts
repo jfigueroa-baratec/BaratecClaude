@@ -1,7 +1,8 @@
 // ============================================================
 //  Victron × Baratec Solar · Black Friday (motion graphics, 9:16 1080x1920)
+//  Paleta de esta versión: blanco + negro + amarillo de Mercado Libre (sin combinar azul con amarillo).
 //  Todo lo editable vive acá: colores, textos, tiempos, volúmenes.
-//  Fuente de identidad: https://solar.baratec.com/ (Titillium Web, voseo en los llamados a la acción)
+//  Identidad: https://solar.baratec.com/ (Titillium Web, voseo en los llamados a la acción)
 // ============================================================
 import timeline from "./timeline.json";
 
@@ -10,33 +11,27 @@ export const SCENES = timeline.scenes;
 export const WIDTH = 1080;
 export const HEIGHT = 1920;
 
-/** Zonas seguras de Instagram: texto y logos dentro de este rectángulo */
+/** Zonas seguras de Instagram: texto y logos dentro de este rectángulo (las bandas decorativas van afuera) */
 export const SAFE = { top: 250, bottom: 420, right: 120, left: 90 };
 
 export const COLORS = {
   background: "#FFFFFF",
-  primary: "#0B66B2", // azul de marca
   ink: "#000000",
+  yellow: "#FFE600", // amarillo de Mercado Libre (único acento)
   grey: "#888A8D",
   border: "#E4E4E4",
-  yellow: "#FFE600", // amarillo de Mercado Libre (acento de campaña)
   white: "#FFFFFF",
+  brandBlue: "#0B66B2", // azul de marca: en esta versión solo aparece dentro del logo de Victron
 };
 
 /** Titillium Web, pesos usados por la web */
 export const FONT_WEIGHTS = { light: 300, regular: 400, title: 600, bold: 700 };
 
 export const TEXTS = {
-  apertura: { word: "VICTRON", sub: "en Mercado Libre" },
+  marquee: "BLACK FRIDAY  |  25/11 → 3/12  |  MERCADO LIBRE  |",
+  apertura: { word: "VICTRON", dates: "Del 25/11 al 3/12", store: "en Mercado Libre" },
   tag: { top: "BLACK", bottom: "FRIDAY", dates: "25/11 → 3/12" },
-  fechas: {
-    kicker: "Black Friday",
-    days: ["25", "26", "27", "28", "29", "30", "1", "2", "3"],
-    monthChangeAt: 6, // índice del primer día de diciembre
-    months: ["NOV", "DIC"],
-    dates: "Del 25/11 al 3/12",
-    chip: ["En productos", "seleccionados"],
-  },
+  label: "Victron Energy",
   // Líneas Victron tomadas de solar.baratec.com (Sistemas Off-Grid). Frases cortas basadas en los textos de la web.
   lineas: [
     { title: ["Inversores", "Cargadores"], sub: "Electricidad estable" },

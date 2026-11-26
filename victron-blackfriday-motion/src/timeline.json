@@ -2,145 +2,28 @@
   "fps": 30,
   "durationInFrames": 300,
   "scenes": {
-    "apertura": {
-      "from": 0,
-      "to": 54
-    },
-    "fechas": {
-      "from": 54,
-      "to": 108
-    },
-    "lineas": {
-      "from": 108,
-      "to": 216
-    },
-    "cierre": {
-      "from": 216,
-      "to": 300
-    }
+    "apertura": { "from": 0, "to": 72 },
+    "lineas": { "from": 72, "to": 216 },
+    "cierre": { "from": 216, "to": 300 }
   },
-  "lineaFrames": 36,
-  "wipeHalf": 9,
+  "lineaFrames": 48,
+  "wipeHalf": 12,
   "sfx": [
-    {
-      "type": "pop",
-      "frame": 8,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 22,
-      "volume": 0.7
-    },
-    {
-      "type": "pop",
-      "frame": 30,
-      "volume": 0.8
-    },
-    {
-      "type": "whoosh",
-      "frame": 45,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 62,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 66,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 70,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 74,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 78,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 82,
-      "volume": 0.35
-    },
-    {
-      "type": "pop",
-      "frame": 86,
-      "volume": 0.9
-    },
-    {
-      "type": "whoosh",
-      "frame": 99,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 116,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 122,
-      "volume": 0.5
-    },
-    {
-      "type": "whoosh",
-      "frame": 135,
-      "volume": 0.5
-    },
-    {
-      "type": "pop",
-      "frame": 152,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 158,
-      "volume": 0.5
-    },
-    {
-      "type": "whoosh",
-      "frame": 171,
-      "volume": 0.5
-    },
-    {
-      "type": "pop",
-      "frame": 188,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 194,
-      "volume": 0.5
-    },
-    {
-      "type": "whoosh",
-      "frame": 207,
-      "volume": 0.9
-    },
-    {
-      "type": "accent",
-      "frame": 232,
-      "volume": 1.0
-    },
-    {
-      "type": "pop",
-      "frame": 252,
-      "volume": 0.9
-    },
-    {
-      "type": "pop",
-      "frame": 262,
-      "volume": 0.6
-    }
+    { "type": "pop", "frame": 14, "volume": 0.9 },
+    { "type": "pop", "frame": 36, "volume": 0.7 },
+    { "type": "pop", "frame": 48, "volume": 0.5 },
+    { "type": "whoosh", "frame": 62, "volume": 0.9 },
+    { "type": "pop", "frame": 82, "volume": 0.9 },
+    { "type": "pop", "frame": 90, "volume": 0.5 },
+    { "type": "whoosh", "frame": 107, "volume": 0.5 },
+    { "type": "pop", "frame": 130, "volume": 0.9 },
+    { "type": "pop", "frame": 138, "volume": 0.5 },
+    { "type": "whoosh", "frame": 155, "volume": 0.5 },
+    { "type": "pop", "frame": 178, "volume": 0.9 },
+    { "type": "pop", "frame": 186, "volume": 0.5 },
+    { "type": "whoosh", "frame": 206, "volume": 0.9 },
+    { "type": "accent", "frame": 234, "volume": 1.0 },
+    { "type": "pop", "frame": 256, "volume": 0.9 },
+    { "type": "pop", "frame": 270, "volume": 0.6 }
   ]
 }
