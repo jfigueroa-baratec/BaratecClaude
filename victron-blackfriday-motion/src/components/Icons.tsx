@@ -2,9 +2,9 @@ import React from "react";
 import { useCurrentFrame } from "remotion";
 import { COLORS } from "../config";
 
-// Pictogramas en blanco (línea) sobre círculo negro, con amarillo como único acento.
+// Pictogramas en blanco sobre círculo azul.
 const W = COLORS.white;
-const Y = COLORS.yellow;
+const Y = COLORS.white;
 const K = COLORS.ink;
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 

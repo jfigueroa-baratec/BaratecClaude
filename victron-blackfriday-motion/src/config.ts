@@ -1,6 +1,6 @@
 // ============================================================
 //  Victron × Baratec Solar · Black Friday (motion graphics, 9:16 1080x1920)
-//  Paleta de esta versión: blanco + negro + amarillo de Mercado Libre (sin combinar azul con amarillo).
+//  Paleta de esta versión: blanco + azul de marca + negro (sin amarillo).
 //  Todo lo editable vive acá: colores, textos, tiempos, volúmenes.
 //  Identidad: https://solar.baratec.com/ (Titillium Web, voseo en los llamados a la acción)
 // ============================================================
@@ -17,11 +17,10 @@ export const SAFE = { top: 250, bottom: 420, right: 120, left: 90 };
 export const COLORS = {
   background: "#FFFFFF",
   ink: "#000000",
-  yellow: "#FFE600", // amarillo de Mercado Libre (único acento)
   grey: "#888A8D",
   border: "#E4E4E4",
   white: "#FFFFFF",
-  brandBlue: "#0B66B2", // azul de marca: en esta versión solo aparece dentro del logo de Victron
+  blue: "#0B66B2", // azul de marca (círculos de los gráficos, bloques y botón)
 };
 
 /** Titillium Web, pesos usados por la web */

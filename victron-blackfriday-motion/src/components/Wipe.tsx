@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
 import { COLORS } from "../config";
 
-/** Telón negro con filo amarillo: cubre en [at-half, at] y destapa en [at, at+half]. */
+/** Telón negro con filo blanco: cubre en [at-half, at] y destapa en [at, at+half]. */
 export const Wipe: React.FC<{ at: number; half: number }> = ({ at, half }) => {
   const frame = useCurrentFrame();
   if (frame < at - half || frame > at + half) return null;
@@ -12,7 +12,7 @@ export const Wipe: React.FC<{ at: number; half: number }> = ({ at, half }) => {
   return (
     <AbsoluteFill style={{ overflow: "hidden", pointerEvents: "none" }}>
       <div style={{ position: "absolute", top: -50, bottom: -50, left: "-12%", width: "124%", transform: `translateX(${x}%) skewX(-12deg)`, background: COLORS.ink }}>
-        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: 28, background: COLORS.yellow }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: 28, background: COLORS.white }} />
       </div>
     </AbsoluteFill>
   );

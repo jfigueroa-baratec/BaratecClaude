@@ -33,14 +33,14 @@ export const Cierre: React.FC = () => {
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 540, textAlign: "center" }}>
         <div style={{ fontSize: 92, lineHeight: 1.05, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, opacity: title, transform: `translateY(${(1 - title) * 50}px)` }}>{T.title}</div>
         <div style={{ position: "relative", display: "inline-block", marginTop: 18 }}>
-          <div style={{ position: "absolute", left: -20, right: -20, bottom: 10, height: 54, background: COLORS.yellow, transformOrigin: "left", transform: `scaleX(${bar})` }} />
+          <div style={{ position: "absolute", left: 0, right: 0, bottom: -4, height: 14, background: COLORS.blue, transformOrigin: "left", transform: `scaleX(${bar})` }} />
           <KineticText text={T.brand} delay={28} stagger={3} style={{ position: "relative", fontSize: 132, lineHeight: 1.05, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
         </div>
       </div>
 
       <div style={{ position: "absolute", left: 540 - 400, width: 800, top: 940, height: 150 }}>
-        {[0, 30].map((o) => { const t = ring(o); return <div key={o} style={{ position: "absolute", inset: 0, borderRadius: 16, border: `6px solid ${COLORS.ink}`, opacity: (1 - t) * 0.6, transform: `scale(${1 + t * 0.3})` }} />; })}
-        <div style={{ position: "absolute", inset: 0, background: COLORS.yellow, borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: COLORS.ink, fontSize: 56, fontWeight: FONT_WEIGHTS.bold, whiteSpace: "nowrap", opacity: cta, transform: `scale(${(0.8 + 0.2 * cta) * pulse})` }}>{T.cta} →</div>
+        {[0, 30].map((o) => { const t = ring(o); return <div key={o} style={{ position: "absolute", inset: 0, borderRadius: 16, border: `6px solid ${COLORS.blue}`, opacity: (1 - t) * 0.7, transform: `scale(${1 + t * 0.3})` }} />; })}
+        <div style={{ position: "absolute", inset: 0, background: COLORS.blue, borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: COLORS.white, fontSize: 56, fontWeight: FONT_WEIGHTS.bold, whiteSpace: "nowrap", opacity: cta, transform: `scale(${(0.8 + 0.2 * cta) * pulse})` }}>{T.cta} →</div>
       </div>
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 1150, textAlign: "center", fontSize: 42, fontWeight: FONT_WEIGHTS.regular, color: COLORS.grey, opacity: url }}>{T.url}</div>
 

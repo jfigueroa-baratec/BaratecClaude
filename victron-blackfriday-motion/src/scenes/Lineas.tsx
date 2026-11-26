@@ -31,11 +31,11 @@ const Item: React.FC<{ index: number }> = ({ index }) => {
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: SAFE.top, textAlign: "center", fontSize: 44, fontWeight: FONT_WEIGHTS.bold, letterSpacing: 12, textTransform: "uppercase", color: COLORS.ink }}>{TEXTS.label}</div>
 
       <div style={{ position: "absolute", left: 540 - 320, top: 410, width: 640, height: 640, transform: `scale(${circle})` }}>
-        <div style={{ position: "absolute", inset: 0, borderRadius: 320, background: COLORS.ink, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ position: "absolute", inset: 0, borderRadius: 320, background: COLORS.blue, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ transform: `scale(${ICON_SCALE[index]})` }}><Icon t={iconT} /></div>
         </div>
         <svg width={700} height={700} viewBox="-350 -350 700 700" style={{ position: "absolute", left: -30, top: -30 }}>
-          <circle r={338} fill="none" stroke={COLORS.ink} strokeWidth={3} strokeDasharray="4 22" strokeLinecap="round" transform={`rotate(${spin})`} />
+          <circle r={338} fill="none" stroke={COLORS.blue} strokeWidth={3} strokeDasharray="4 22" strokeLinecap="round" transform={`rotate(${spin})`} />
         </svg>
       </div>
 
@@ -43,7 +43,7 @@ const Item: React.FC<{ index: number }> = ({ index }) => {
         <div style={{ fontSize: 104, lineHeight: 1.0, fontWeight: FONT_WEIGHTS.bold, textTransform: "uppercase", color: COLORS.ink, opacity: title, transform: `translateY(${(1 - title) * 50}px)` }}>
           {it.title.map((l) => <div key={l}>{l}</div>)}
         </div>
-        <div style={{ display: "inline-block", marginTop: 30, background: COLORS.yellow, color: COLORS.ink, fontSize: 54, fontWeight: FONT_WEIGHTS.bold, padding: "8px 30px", opacity: sub, transform: `translateX(${(1 - sub) * 100}px)` }}>{it.sub}</div>
+        <div style={{ display: "inline-block", marginTop: 30, background: COLORS.blue, color: COLORS.white, fontSize: 54, fontWeight: FONT_WEIGHTS.bold, padding: "8px 30px", opacity: sub, transform: `translateX(${(1 - sub) * 100}px)` }}>{it.sub}</div>
       </div>
     </AbsoluteFill>
   );
