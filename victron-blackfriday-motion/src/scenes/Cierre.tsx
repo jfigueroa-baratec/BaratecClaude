@@ -8,16 +8,16 @@ import { KineticText } from "../components/KineticText";
 export const Cierre: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const sp = (d: number, damping = 15) => spring({ frame: frame - d, fps, config: { damping, stiffness: 75 } });
+  const sp = (d: number, damping = 15) => spring({ frame: frame - d, fps, config: { damping: damping + 2, stiffness: 55 } });
   const T = TEXTS.cierre;
-  const logo = sp(14);
-  const title = sp(20);
-  const bar = interpolate(frame, [38, 58], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const cta = sp(38, 12);
-  const url = sp(52);
-  const pulse = 1 + 0.02 * Math.sin(Math.max(0, frame - 60) / 7);
+  const logo = sp(10);
+  const title = sp(22);
+  const bar = interpolate(frame, [56, 82], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const cta = sp(62, 12);
+  const url = sp(78);
+  const pulse = 1 + 0.02 * Math.sin(Math.max(0, frame - 90) / 9);
   const fade = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: "clamp" });
-  const ring = (off: number) => { const t = ((frame - 46 - off) % 60) / 60; return t < 0 ? 0 : t; };
+  const ring = (off: number) => { const t = ((frame - 78 - off) % 70) / 70; return t < 0 ? 0 : t; };
 
   return (
     <AbsoluteFill style={{ opacity: fade }}>
@@ -34,7 +34,7 @@ export const Cierre: React.FC = () => {
         <div style={{ fontSize: 92, lineHeight: 1.05, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, opacity: title, transform: `translateY(${(1 - title) * 50}px)` }}>{T.title}</div>
         <div style={{ position: "relative", display: "inline-block", marginTop: 18 }}>
           <div style={{ position: "absolute", left: 0, right: 0, bottom: -4, height: 14, background: COLORS.blue, transformOrigin: "left", transform: `scaleX(${bar})` }} />
-          <KineticText text={T.brand} delay={28} stagger={3} style={{ position: "relative", fontSize: 132, lineHeight: 1.05, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
+          <KineticText text={T.brand} delay={36} stagger={2.4} style={{ position: "relative", fontSize: 132, lineHeight: 1.05, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
         </div>
       </div>
 
@@ -45,7 +45,7 @@ export const Cierre: React.FC = () => {
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 1150, textAlign: "center", fontSize: 42, fontWeight: FONT_WEIGHTS.regular, color: COLORS.grey, opacity: url }}>{T.url}</div>
 
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 1270, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16 }}>
-        {T.chips.map((c, i) => { const p = sp(60 + i * 6, 14); return <div key={c} style={{ border: `4px solid ${COLORS.ink}`, color: COLORS.ink, fontSize: 40, fontWeight: FONT_WEIGHTS.bold, padding: "8px 26px", borderRadius: 40, opacity: p, transform: `translateY(${(1 - p) * 40}px)` }}>{c}</div>; })}
+        {T.chips.map((c, i) => { const p = sp(90 + i * 8, 14); return <div key={c} style={{ border: `4px solid ${COLORS.ink}`, color: COLORS.ink, fontSize: 40, fontWeight: FONT_WEIGHTS.bold, padding: "8px 26px", borderRadius: 40, opacity: p, transform: `translateY(${(1 - p) * 40}px)` }}>{c}</div>; })}
       </div>
     </AbsoluteFill>
   );

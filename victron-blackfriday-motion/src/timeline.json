@@ -1,29 +1,132 @@
 {
   "fps": 30,
-  "durationInFrames": 300,
+  "durationInFrames": 450,
   "scenes": {
-    "apertura": { "from": 0, "to": 72 },
-    "lineas": { "from": 72, "to": 216 },
-    "cierre": { "from": 216, "to": 300 }
+    "apertura": {
+      "from": 0,
+      "to": 108
+    },
+    "lineas": {
+      "from": 108,
+      "to": 324
+    },
+    "cierre": {
+      "from": 324,
+      "to": 450
+    }
   },
-  "lineaFrames": 48,
-  "wipeHalf": 12,
+  "lineaFrames": 72,
+  "wipeHalf": 14,
   "sfx": [
-    { "type": "pop", "frame": 14, "volume": 0.9 },
-    { "type": "pop", "frame": 36, "volume": 0.7 },
-    { "type": "pop", "frame": 48, "volume": 0.5 },
-    { "type": "whoosh", "frame": 62, "volume": 0.9 },
-    { "type": "pop", "frame": 82, "volume": 0.9 },
-    { "type": "pop", "frame": 90, "volume": 0.5 },
-    { "type": "whoosh", "frame": 107, "volume": 0.5 },
-    { "type": "pop", "frame": 130, "volume": 0.9 },
-    { "type": "pop", "frame": 138, "volume": 0.5 },
-    { "type": "whoosh", "frame": 155, "volume": 0.5 },
-    { "type": "pop", "frame": 178, "volume": 0.9 },
-    { "type": "pop", "frame": 186, "volume": 0.5 },
-    { "type": "whoosh", "frame": 206, "volume": 0.9 },
-    { "type": "accent", "frame": 234, "volume": 1.0 },
-    { "type": "pop", "frame": 256, "volume": 0.9 },
-    { "type": "pop", "frame": 270, "volume": 0.6 }
+    {
+      "type": "pop",
+      "frame": 14,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 40,
+      "volume": 0.7
+    },
+    {
+      "type": "pop",
+      "frame": 62,
+      "volume": 0.8
+    },
+    {
+      "type": "pop",
+      "frame": 80,
+      "volume": 0.5
+    },
+    {
+      "type": "whoosh",
+      "frame": 96,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 118,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 126,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 138,
+      "volume": 0.4
+    },
+    {
+      "type": "whoosh",
+      "frame": 166,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 190,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 198,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 210,
+      "volume": 0.4
+    },
+    {
+      "type": "whoosh",
+      "frame": 238,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 262,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 270,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 282,
+      "volume": 0.4
+    },
+    {
+      "type": "whoosh",
+      "frame": 312,
+      "volume": 0.9
+    },
+    {
+      "type": "accent",
+      "frame": 344,
+      "volume": 1.0
+    },
+    {
+      "type": "pop",
+      "frame": 388,
+      "volume": 0.9
+    },
+    {
+      "type": "pop",
+      "frame": 410,
+      "volume": 0.6
+    },
+    {
+      "type": "pop",
+      "frame": 418,
+      "volume": 0.5
+    },
+    {
+      "type": "pop",
+      "frame": 426,
+      "volume": 0.5
+    }
   ]
 }

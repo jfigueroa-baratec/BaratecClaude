@@ -14,7 +14,7 @@ const UNIT = 1400; // ancho de cada repetición del texto
 /** Banda de texto que se desplaza despacio (decorativa, fuera de la zona segura). textLength fija el ancho para que el empalme sea exacto. */
 const Band: React.FC<{ top: number; bg: string; color: string; dir: 1 | -1; border?: string }> = ({ top, bg, color, dir, border }) => {
   const frame = useCurrentFrame();
-  const off = ((frame * 3 * dir) % UNIT + UNIT) % UNIT;
+  const off = ((frame * 2 * dir) % UNIT + UNIT) % UNIT;
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top, height: 96, background: bg, overflow: "hidden", borderTop: border ? `5px solid ${border}` : undefined, borderBottom: border ? `5px solid ${border}` : undefined, boxSizing: "border-box" }}>
       <svg width={1080} height={96} style={{ display: "block" }}>

@@ -14,15 +14,15 @@ const Item: React.FC<{ index: number }> = ({ index }) => {
   const f = frame - index * L;
   const last = index === TEXTS.lineas.length - 1;
   if (f < -2 || f > L + 2) return null;
-  const sp = (d: number, damping = 16) => spring({ frame: f - d, fps, config: { damping, stiffness: 95 } });
+  const sp = (d: number, damping = 16) => spring({ frame: f - d, fps, config: { damping: damping + 2, stiffness: 55 } });
   const enter = sp(0);
-  const exit = last ? 0 : interpolate(f, [L - 10, L], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (x) => x * x });
+  const exit = last ? 0 : interpolate(f, [L - 14, L], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: (x) => x * x });
   const x = (1 - enter) * 1100 - exit * 1100;
-  const circle = sp(2, 14);
-  const iconT = interpolate(f, [6, 32], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const title = sp(8);
-  const sub = sp(14);
-  const spin = f * 0.5;
+  const circle = sp(3, 14);
+  const iconT = interpolate(f, [10, 52], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const title = sp(18);
+  const sub = sp(30);
+  const spin = f * 0.35;
   const Icon = ICONS[index];
   const it = TEXTS.lineas[index];
 

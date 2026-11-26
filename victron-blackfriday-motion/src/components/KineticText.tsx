@@ -8,7 +8,7 @@ export const KineticText: React.FC<{ text: string; delay?: number; stagger?: num
   return (
     <div style={{ display: "flex", justifyContent: "center", whiteSpace: "pre", ...style }}>
       {text.split("").map((ch, i) => {
-        const p = spring({ frame: frame - delay - i * stagger, fps, config: { damping: 14, stiffness: 80 } });
+        const p = spring({ frame: frame - delay - i * stagger, fps, config: { damping: 16, stiffness: 55 } });
         return (
           <span key={i} style={{ display: "inline-block", opacity: Math.min(1, p * 2), transform: `translateY(${(1 - p) * rise}px) scale(${0.8 + 0.2 * p})` }}>
             {ch === " " ? " " : ch}

@@ -73,40 +73,36 @@ def shaker_clap(dur=0.18):
 
 # ---------- musica ----------
 def music():
-    bpm = 100.0; beat = 60.0 / bpm  # 0.6 s -> 54 frames = 3 beats
+    bpm = 100.0; beat = 60.0 / bpm  # 0.6 s por pulso
     buf = np.zeros((N, 2))
-    chords = [  # (acorde, bajo)  C - G - Am - F - C final
+    chords = [  # (acorde, bajo)  C - G - Am - F
         ([48, 52, 55, 60], 36), ([47, 50, 55, 59], 31), ([45, 52, 57, 60], 33), ([41, 53, 57, 60], 29),
     ]
-    for ci in range(4):
-        ch, root = chords[ci]; start = ci * 3 * beat
+    prog = [0, 1, 2, 3, 0, 1, 3]            # 7 acordes de 3 pulsos = 12,6 s
+    final = len(prog) * 3 * beat            # acorde final de C (resolución)
+    for ci, idx in enumerate(prog):
+        ch, root = chords[idx]; start = ci * 3 * beat
         for m in ch: add(buf, pad(mtof(m), 3 * beat + 0.2), start, gain=0.10)
         add(buf, bass(mtof(root + 12)), start, gain=0.55)
         add(buf, bass(mtof(root + 12)), start + 2.0*beat, gain=0.35)
-        pat = [0, 1, 2, 3, 2, 1]
-        for k, idx in enumerate(pat):
-            pan = -0.25 + 0.5 * (k / 5)
-            add(buf, marimba(mtof(ch[idx] + 12)), start + k * beat / 2, pan=pan, gain=0.33)
-    # acorde final (beat 12 -> 7.2 s), sostenido y con fade out
-    start = 12 * beat; rem = DUR - start
-    for m in [48, 52, 55, 60, 64]: add(buf, pad(mtof(m), rem), start, gain=0.12)
-    add(buf, bass(mtof(36), 1.2), start, gain=0.6)
+        for k, i2 in enumerate([0, 1, 2, 3, 2, 1]):
+            add(buf, marimba(mtof(ch[i2] + 12)), start + k * beat / 2, pan=-0.25 + 0.5 * (k / 5), gain=0.33)
+    rem = DUR - final
+    for m in [48, 52, 55, 60, 64]: add(buf, pad(mtof(m), rem), final, gain=0.12)
+    add(buf, bass(mtof(36), 1.2), final, gain=0.6)
     for k, m in enumerate([72, 67, 64, 72, 76]):
-        add(buf, marimba(mtof(m), 1.0), start + k * beat / 2, pan=-0.2 + 0.1*k, gain=0.30)
-    # percusion suave: bombo en cada pulso, hats a contratiempo, clap en 2 y 4 (desde beat 2)
-    nb = int(12 * beat / beat) + 1
-    for b in range(0, 17):
+        add(buf, marimba(mtof(m), 1.0), final + k * beat / 2, pan=-0.2 + 0.1*k, gain=0.30)
+    nbeats = int(final / beat)
+    for b in range(0, nbeats + 2):
         ts = b * beat
         if ts >= DUR - 0.3: break
-        if b >= 2: add(buf, kick(), ts, gain=0.55 if b < 12 else 0.5)
-        if b >= 2 and b % 2 == 1 and b < 12: add(buf, shaker_clap(), ts, gain=0.20)
-    for k in range(4, 34):
-        ts = k * beat / 2
-        if ts >= 7.2: break
-        add(buf, hat(), ts + beat/4*0 + (beat/2 if False else 0), pan=0.3, gain=0.10 if k % 2 else 0.06)
-    # envolvente global: entrada 0.15 s y fade out 8.6 -> 10 s
-    t = t_arr(N)
-    env = np.minimum(1, t / 0.15) * np.where(t > 8.6, 0.5 * (1 + np.cos(np.pi * np.clip((t - 8.6) / (DUR - 8.6), 0, 1))), 1.0)
+        if b >= 2: add(buf, kick(), ts, gain=0.55 if ts < final else 0.5)
+        if b >= 2 and b % 2 == 1 and ts < final: add(buf, shaker_clap(), ts, gain=0.20)
+    k = 4
+    while k * beat / 2 < final:
+        add(buf, hat(), k * beat / 2, pan=0.3, gain=0.10 if k % 2 else 0.06); k += 1
+    t = t_arr(N); fs = DUR - 1.6
+    env = np.minimum(1, t / 0.15) * np.where(t > fs, 0.5 * (1 + np.cos(np.pi * np.clip((t - fs) / (DUR - fs), 0, 1))), 1.0)
     return buf * env[:, None]
 
 # ---------- efectos ----------

@@ -1,5 +1,5 @@
 // ============================================================
-//  Victron × Baratec Solar · Black Friday (motion graphics, 9:16 1080x1920)
+//  Victron × Baratec Solar · Black Friday (motion graphics, 9:16 1080x1920, 15 s)
 //  Paleta de esta versión: blanco + azul de marca + negro (sin amarillo).
 //  Todo lo editable vive acá: colores, textos, tiempos, volúmenes.
 //  Identidad: https://solar.baratec.com/ (Titillium Web, voseo en los llamados a la acción)

@@ -23,12 +23,12 @@ const Tag: React.FC<{ drop: number; swing: number }> = ({ drop, swing }) => (
 export const Apertura: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const logo = spring({ frame: frame - 4, fps, config: { damping: 16, stiffness: 70 } });
-  const drop = spring({ frame: frame - 8, fps, config: { damping: 11, stiffness: 55 } });
-  const t = Math.max(0, frame - 14) / fps;
-  const swing = 9 * Math.exp(-t * 0.7) * Math.cos(t * 4.2);
-  const date = spring({ frame: frame - 34, fps, config: { damping: 16, stiffness: 70 } });
-  const store = spring({ frame: frame - 46, fps, config: { damping: 16, stiffness: 70 } });
+  const logo = spring({ frame: frame - 6, fps, config: { damping: 18, stiffness: 55 } });
+  const drop = spring({ frame: frame - 10, fps, config: { damping: 12, stiffness: 45 } });
+  const t = Math.max(0, frame - 18) / fps;
+  const swing = 9 * Math.exp(-t * 0.5) * Math.cos(t * 3.4);
+  const date = spring({ frame: frame - 56, fps, config: { damping: 18, stiffness: 55 } });
+  const store = spring({ frame: frame - 74, fps, config: { damping: 18, stiffness: 55 } });
 
   return (
     <AbsoluteFill>
@@ -36,7 +36,7 @@ export const Apertura: React.FC = () => {
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: SAFE.top, display: "flex", justifyContent: "center", opacity: logo, transform: `translateY(${(1 - logo) * -40}px)` }}><Logo width={400} /></div>
       <Tag drop={drop} swing={swing} />
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 1040, textAlign: "center" }}>
-        <KineticText text={TEXTS.apertura.word} delay={12} stagger={1.4} style={{ fontSize: 128, lineHeight: 1.1, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
+        <KineticText text={TEXTS.apertura.word} delay={34} stagger={2} style={{ fontSize: 128, lineHeight: 1.1, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
         <div style={{ position: "relative", display: "inline-block", marginTop: 26, opacity: date, transform: `translateY(${(1 - date) * 30}px)` }}>
           <div style={{ background: COLORS.blue, color: COLORS.white, fontSize: 84, lineHeight: 1.1, fontWeight: FONT_WEIGHTS.bold, padding: "8px 40px" }}>{TEXTS.apertura.dates}</div>
         </div>
