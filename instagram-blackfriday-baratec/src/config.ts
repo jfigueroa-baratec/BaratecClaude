@@ -13,12 +13,12 @@ export const SAFE = { top: 250, bottom: 420, right: 120, left: 90 };
 /** Colores de marca de Baratec + amarillo de Mercado Libre como acento de campaña */
 export const COLORS = {
   background: "#FFFFFF",
-  primary: "#0A5AA2", // azul de marca
+  primary: "#0B66B2", // azul de marca
   ink: "#000000", // negro (texto y etiqueta)
   brandDark: "#201C1D",
   grey: "#888A8D",
   border: "#E4E4E4",
-  yellow: "#FFE340", // amarillo de Mercado Libre
+  yellow: "#FFE600", // amarillo de Mercado Libre
   white: "#FFFFFF",
 };
 
@@ -39,7 +39,6 @@ export const TEXTS = {
   cierre: {
     title: "Visitá nuestra tienda",
     brand: "Baratec Solar",
-    badge: "Tienda oficial Baratec",
     cta: "Buscanos en Mercado Libre",
     url: "mercadolibre.com.ar/tienda/baratec",
   },

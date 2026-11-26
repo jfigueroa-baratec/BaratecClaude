@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { COLORS, FONT_WEIGHTS, SAFE, TEXTS } from "../config";
 import { Background } from "../components/Background";
 
@@ -38,7 +38,7 @@ export const FechasScene: React.FC = () => {
           <div style={{ display: "inline-block", background: COLORS.yellow, color: COLORS.ink, fontSize: 100, lineHeight: 1.08, fontWeight: FONT_WEIGHTS.black, textTransform: "uppercase", padding: "18px 48px", opacity: chip, transform: `scale(${0.7 + 0.3 * chip})` }}>
             {T.chip.map((l) => <div key={l}>{l}</div>)}
           </div>
-          <div style={{ marginTop: 26, fontSize: 56, fontWeight: FONT_WEIGHTS.light, color: COLORS.ink, opacity: sub, transform: `translateY(${(1 - sub) * 30}px)` }}>{T.sub}</div>
+          <Img src={staticFile("logo-mercadolibre.png")} style={{ marginTop: 30, width: 400, height: "auto", opacity: sub, transform: `translateY(${(1 - sub) * 30}px) scale(${0.85 + 0.15 * sub})` }} />
         </div>
       </div>
     </AbsoluteFill>

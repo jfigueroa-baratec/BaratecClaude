@@ -1,12 +1,8 @@
 import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { COLORS, FONT_WEIGHTS, SAFE, TEXTS } from "../config";
 import { Background } from "../components/Background";
 import { Logo } from "../components/Logo";
-
-const Check: React.FC = () => (
-  <svg width={46} height={46} viewBox="0 0 24 24"><circle cx={12} cy={12} r={11} fill={COLORS.primary} /><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#fff" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" /></svg>
-);
 
 export const CierreScene: React.FC = () => {
   const frame = useCurrentFrame();
@@ -33,13 +29,8 @@ export const CierreScene: React.FC = () => {
           <div style={{ marginTop: 14, fontSize: 124, lineHeight: 1.0, whiteSpace: "nowrap", fontWeight: FONT_WEIGHTS.black, color: COLORS.primary, opacity: brand, transform: `scale(${0.75 + 0.25 * brand})` }}>{T.brand}</div>
         </div>
 
-        {/* insignia de tienda oficial (diseñada acá, nítida) */}
-        <div style={{ display: "flex", alignItems: "center", gap: 22, background: COLORS.white, border: `2px solid ${COLORS.border}`, borderRadius: 16, padding: "20px 34px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", opacity: badge, transform: `translateY(${(1 - badge) * 60}px)` }}>
-          <Logo width={190} />
-          <div style={{ width: 2, height: 64, background: COLORS.border }} />
-          <Check />
-          <div style={{ fontSize: 44, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, textAlign: "left", lineHeight: 1.1 }}>{T.badge}</div>
-        </div>
+        {/* banner de la tienda (imagen provista) */}
+        <Img src={staticFile("banner-victron.png")} style={{ width: 870, height: "auto", borderRadius: 18, boxShadow: "0 16px 40px rgba(0,0,0,0.14)", border: `2px solid ${COLORS.border}`, opacity: badge, transform: `translateY(${(1 - badge) * 60}px)` }} />
 
         <div>
           <div style={{ background: COLORS.yellow, color: COLORS.ink, fontSize: 52, whiteSpace: "nowrap", fontWeight: FONT_WEIGHTS.black, padding: "24px 44px", borderRadius: 8, opacity: cta, transform: `scale(${(0.7 + 0.3 * cta) * pulse})` }}>{T.cta} →</div>
