@@ -5,7 +5,7 @@ import { COLORS } from "../config";
 // Pictogramas en blanco sobre círculo azul.
 const W = COLORS.white;
 const Y = COLORS.white;
-const K = COLORS.ink;
+const K = COLORS.blue; // detalles dentro de las piezas blancas: azul (solo blanco y azul)
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 
 /** Puntos de energía que viajan por una línea horizontal. */

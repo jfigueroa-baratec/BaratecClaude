@@ -28,7 +28,7 @@ export const FONT_WEIGHTS = { light: 300, regular: 400, title: 600, bold: 700 };
 
 export const TEXTS = {
   marquee: "BLACK FRIDAY  |  25/11 → 3/12  |  MERCADO LIBRE  |",
-  apertura: { word: "VICTRON", dates: "Del 25/11 al 3/12", store: "en Mercado Libre" },
+  apertura: { word: "Baratec Solar", dates: "Del 25/11 al 3/12", store: "en Mercado Libre" },
   tag: { top: "BLACK", bottom: "FRIDAY", dates: "25/11 → 3/12" },
   label: "Victron Energy",
   // Líneas Victron tomadas de solar.baratec.com (Sistemas Off-Grid). Frases cortas basadas en los textos de la web.

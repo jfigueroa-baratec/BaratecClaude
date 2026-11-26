@@ -8,10 +8,10 @@ import { KineticText } from "../components/KineticText";
 /** Etiqueta vectorial "BLACK FRIDAY" que cae y se balancea desde el ojal. */
 const Tag: React.FC<{ drop: number; swing: number }> = ({ drop, swing }) => (
   <svg width={410} height={623} viewBox="0 0 500 760" style={{ position: "absolute", left: 540 - 205, top: 395, overflow: "visible", transformOrigin: "50% 14.5%", transform: `translateY(${(1 - drop) * -900}px) rotate(${swing}deg)` }}>
-    <path d="M250 110 C 240 60, 215 30, 232 -30" fill="none" stroke={COLORS.ink} strokeWidth={5} strokeLinecap="round" />
-    <path d="M110 40 L390 40 Q 440 40 440 90 L440 690 Q 440 740 390 740 L110 740 Q 60 740 60 690 L60 90 Q 60 40 110 40 Z" fill={COLORS.ink} />
+    <path d="M250 110 C 240 60, 215 30, 232 -30" fill="none" stroke={COLORS.blue} strokeWidth={5} strokeLinecap="round" />
+    <path d="M110 40 L390 40 Q 440 40 440 90 L440 690 Q 440 740 390 740 L110 740 Q 60 740 60 690 L60 90 Q 60 40 110 40 Z" fill={COLORS.blue} />
     <circle cx={250} cy={110} r={34} fill={COLORS.white} />
-    <circle cx={250} cy={110} r={34} fill="none" stroke={COLORS.grey} strokeWidth={10} />
+    <circle cx={250} cy={110} r={18} fill={COLORS.blue} />
     <rect x={110} y={250} width={280} height={6} fill={COLORS.white} />
     <text x={250} y={380} textAnchor="middle" fontSize={112} fontWeight={700} fill={COLORS.white} fontFamily="inherit">{TEXTS.tag.top}</text>
     <text x={250} y={490} textAnchor="middle" fontSize={112} fontWeight={700} fill={COLORS.white} fontFamily="inherit">{TEXTS.tag.bottom}</text>
@@ -36,7 +36,7 @@ export const Apertura: React.FC = () => {
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: SAFE.top, display: "flex", justifyContent: "center", opacity: logo, transform: `translateY(${(1 - logo) * -40}px)` }}><Logo width={400} /></div>
       <Tag drop={drop} swing={swing} />
       <div style={{ position: "absolute", left: SAFE.left, right: SAFE.right, top: 1040, textAlign: "center" }}>
-        <KineticText text={TEXTS.apertura.word} delay={20} stagger={3} style={{ fontSize: 176, lineHeight: 1, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, letterSpacing: 4 }} />
+        <KineticText text={TEXTS.apertura.word} delay={12} stagger={1.4} style={{ fontSize: 128, lineHeight: 1.1, fontWeight: FONT_WEIGHTS.bold, color: COLORS.ink, whiteSpace: "nowrap" }} />
         <div style={{ position: "relative", display: "inline-block", marginTop: 26, opacity: date, transform: `translateY(${(1 - date) * 30}px)` }}>
           <div style={{ background: COLORS.blue, color: COLORS.white, fontSize: 84, lineHeight: 1.1, fontWeight: FONT_WEIGHTS.bold, padding: "8px 40px" }}>{TEXTS.apertura.dates}</div>
         </div>
