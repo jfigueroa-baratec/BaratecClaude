@@ -7,7 +7,7 @@ import { FechasScene } from "./scenes/FechasScene";
 import { CierreScene } from "./scenes/CierreScene";
 import { Wipe } from "./components/Wipe";
 
-export const { fontFamily } = loadFont("normal", { weights: ["300", "400", "600", "700", "900"], subsets: ["latin"] });
+export const { fontFamily } = loadFont("normal", { weights: ["300", "400", "600", "700"], subsets: ["latin"] });
 
 const SFX_FILES: Record<string, string> = { whoosh: "audio/sfx_whoosh.wav", pop: "audio/sfx_pop.wav", accent: "audio/sfx_accent.wav" };
 

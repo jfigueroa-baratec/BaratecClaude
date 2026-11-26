@@ -1,6 +1,9 @@
 import { Config } from "@remotion/cli/config";
 
-Config.setVideoImageFormat("jpeg");
+// Calidad máxima de texto: cuadros intermedios en PNG (sin artefactos JPEG) y CRF bajo.
+Config.setVideoImageFormat("png");
+Config.setCrf(12);
+Config.setX264Preset("slow");
 Config.setOverwriteOutput(true);
 
 // En entornos sin acceso a remotion.media se puede usar un Chromium local:

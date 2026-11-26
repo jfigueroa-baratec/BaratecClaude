@@ -1,6 +1,6 @@
 // ============================================================
 //  Black Friday en Mercado Libre · Instagram 9:16 (1080x1920)
-//  Fondo blanco. Todo lo editable vive acá: colores, textos, tiempos, volúmenes.
+//  Tipografía: Titillium Web (la de solar.baratec.com), pesos 300/400/600/700. Fondo blanco. Todo lo editable vive acá: colores, textos, tiempos, volúmenes.
 // ============================================================
 import timeline from "./timeline.json";
 
@@ -22,7 +22,7 @@ export const COLORS = {
   white: "#FFFFFF",
 };
 
-export const FONT_WEIGHTS = { light: 300, regular: 400, title: 600, bold: 700, black: 900 };
+export const FONT_WEIGHTS = { light: 300, regular: 400, title: 600, bold: 700, black: 700 };
 
 export const TEXTS = {
   tag: {
