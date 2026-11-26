@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "durationInFrames": 300,
+  "scenes": {
+    "tag": { "from": 0, "to": 90 },
+    "fechas": { "from": 90, "to": 180 },
+    "cierre": { "from": 180, "to": 300 }
+  },
+  "wipeHalf": 9,
+  "sfx": [
+    { "type": "pop", "frame": 12, "volume": 0.9 },
+    { "type": "pop", "frame": 40, "volume": 0.8 },
+    { "type": "pop", "frame": 58, "volume": 0.7 },
+    { "type": "whoosh", "frame": 81, "volume": 0.9 },
+    { "type": "pop", "frame": 100, "volume": 0.9 },
+    { "type": "pop", "frame": 118, "volume": 0.9 },
+    { "type": "pop", "frame": 140, "volume": 0.9 },
+    { "type": "whoosh", "frame": 171, "volume": 0.9 },
+    { "type": "accent", "frame": 198, "volume": 1.0 },
+    { "type": "pop", "frame": 214, "volume": 0.9 },
+    { "type": "pop", "frame": 230, "volume": 1.0 }
+  ]
+}
